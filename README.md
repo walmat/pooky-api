@@ -180,11 +180,11 @@ Please note: these are dummy values just used for demonstration, do not assume t
 
 Your screen should look like the following:
 
-![Mutation](./public/mutation.png)
+![Mutation](https://github.com/walmat/pooky-api/blob/master/public/mutation.PNG)
 
 Hit the big `play` icon to perform the mutation. 
 
-![Mutation](./public/mutation-done.png)
+![Mutation](https://github.com/walmat/pooky-api/blob/master/public/mutation-done.PNG)
 
 Congrats, you just performed a simple graphQL mutation!
 
@@ -213,11 +213,11 @@ However, we can view the currently stored cookies by performing a `Query`.
 
 This should look like:
 
-![query](./public/query.png)
+![query](https://github.com/walmat/pooky-api/blob/master/public/query.PNG)
 
 Now, hit the `play` icon to perform the query on the datastore that holds cookies.
 
-![query-done](./public/query-done.png)
+![query-done](https://github.com/walmat/pooky-api/blob/master/public/query-done.png)
 
 Simple, right? I've left some programatic examples [here](https://github.com/walmat/pooky-api/tree/master/packages/datastore/examples).
 
