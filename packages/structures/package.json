@@ -1,0 +1,25 @@
+{
+  "name": "@pooky/structures",
+  "version": "0.1.0",
+  "description": "common data structures/definitions used in pooky api",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "private": true,
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "build": "babel --root-mode upward --no-comments -d dist src/",
+    "coverage": "jest --coverage",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "postinstall": "yarn run build",
+    "lint": "eslint --ext js src/",
+    "lint:fix": "eslint --fix --ext js src/"
+  },
+  "dependencies": {
+    "graphql": "^14.2.1",
+    "prop-types": "^15.7.2",
+    "whatwg-url": "^7.0.0"
+  }
+}

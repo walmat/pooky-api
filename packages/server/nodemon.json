@@ -1,0 +1,6 @@
+{
+  "verbose": false,
+  "ignore": ["*.test.js", "dist/"],
+  "watch": ["src/"],
+  "exec": "yarn run build && yarn run dev:node"
+}

@@ -1,0 +1,34 @@
+{
+  "name": "@pooky/server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "yarn run dev",
+    "dev": "cross-env NODE_ENV=development yarn run dev:nodemon",
+    "dev:nodemon": "nodemon --config nodemon.json",
+    "dev:node": "node --experimental-worker dist/server.js",
+    "build": "babel --root-mode upward --no-comments -d dist src/",
+    "heroku-postbuild": "yarn --production=false && yarn workspaces run build",
+    "postinstall": "yarn run build",
+    "lint": "eslint --ext js src/",
+    "lint:fix": "eslint --fix --ext js src/"
+  },
+  "dependencies": {
+    "@pooky/datastore": "*",
+    "@pooky/structures": "*",
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "express-graphql": "^0.8.0",
+    "graphql": "^14.2.1",
+    "react-grid-system": "^4.4.3",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "cross-env": "^5.2.0",
+    "nodemon": "^1.18.10"
+  }
+}
