@@ -217,7 +217,7 @@ This should look like:
 
 Now, hit the `play` icon to perform the query on the datastore that holds cookies.
 
-![query-done](https://github.com/walmat/pooky-api/blob/master/public/query-done.png)
+![query-done](https://github.com/walmat/pooky-api/blob/master/public/query-done.PNG)
 
 Simple, right? I've left some programatic examples [here](https://github.com/walmat/pooky-api/tree/master/packages/datastore/examples).
 
