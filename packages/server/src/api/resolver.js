@@ -8,16 +8,16 @@ const { settingsState } = initialStates;
 class Resolver {
   constructor() {
     this._settingsId = null;
-    if (process.env.MONITOR_DATASOURCE === Datasources.redis) {
+    if (process.env.POOKY_DATASOURCE === Datasources.redis) {
       let connectArgs = [];
-      // heroku defined .env variable
+      // external defined .env variable (DO NOT DEFINE THIS IN THE .env FILE)
       if (process.env.REDIS_URL) {
         connectArgs = [process.env.REDIS_URL];
       } else {
         connectArgs = [
           {
-            host: process.env.MONITOR_REDIS_HOST || '127.0.0.1',
-            port: process.env.MONITOR_REDIS_PORT || '6379',
+            host: process.env.POOKY_REDIS_HOST || '127.0.0.1',
+            port: process.env.POOKY_REDIS_PORT || '6379',
           },
         ];
       }
