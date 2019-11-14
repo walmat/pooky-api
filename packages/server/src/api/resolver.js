@@ -36,7 +36,7 @@ class Resolver {
   }
 
   async editCookies(id, data) {
-    return this.store.products.edit(id, data);
+    return this.store.cookies.edit(id, data);
   }
 
   async getSettings() {

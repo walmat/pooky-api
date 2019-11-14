@@ -225,7 +225,7 @@ Simple, right? I've left some programatic examples [here](https://github.com/wal
 
 1. https://github.com/schickling/timemachine
 2. https://github.com/paulirish/break-on-access
-3. https://github.com/krpar/pooky-browser (shoutout to @krpar for this)
+3. https://github.com/krpar/pooky-browser (shoutout to [@krpar](https://github.com/krpar) for this)
 
 This README scratches the surface on what GraphQL is capable of, to find out
 more about what it's used for, please refer to it's [documentation](https://graphql.org).
