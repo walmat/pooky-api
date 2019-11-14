@@ -1,24 +1,17 @@
-import { createClient } from 'redis';
+import Redis from 'ioredis';
 
 import RedisApi from '../api/redisApi';
-import Datasources from '../utils/datasources';
-
 import Store from './store';
 
 class RedisStore extends Store {
   constructor(redisClientOptions = {}) {
-    super(Datasources.redis);
-    this._client = createClient(redisClientOptions);
+    super('REDIS');
+    this._client = new Redis(redisClientOptions);
     this._cookiesApi = new RedisApi('cookies', this._client);
-    this._settingsApi = new RedisApi('settings', this._client);
   }
 
   get cookies() {
     return this._cookiesApi;
-  }
-
-  get settings() {
-    return this._settingsApi;
   }
 }
 

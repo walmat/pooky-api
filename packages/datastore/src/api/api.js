@@ -1,4 +1,4 @@
-/* eslint class-methods-use-this: ["error", { "exceptMethods": ["browse", "read", "edit", "add", "delete"] }] */
+/* eslint class-methods-use-this: ["error", { "exceptMethods": ["pop", "flush", "add"] }] */
 /* eslint no-unused-vars: "off" */
 // Standard BREAD api
 class Api {
@@ -14,37 +14,22 @@ class Api {
   }
 
   /**
-   * Browse for all stored items
+   * Removes the first index of a dataset
    *
-   * @returns list of all stored items
+   * @returns {Object} payload
    * @throws when operation could not be performed
    */
-  async browse() {
+  async pop() {
     throw new Error('This needs to be overwritten in subclass!');
   }
 
   /**
-   * Read a specific item based on the given id
+   * Removes all keys in a database
    *
-   * @param {string} id id to retrieve
-   * @returns {Object} payload with the given id
-   * @throws when id is invalid or operation could not be performed
-   */
-  async read(id) {
-    throw new Error('This needs to be overwritten in subclass!');
-  }
-
-  /**
-   * Edit a specific item with the given id
-   *
-   * If id is not found, this method will fallback to add
-   *
-   * @param {string} id id to edit
-   * @param {Object} payload updated payload to store
-   * @returns {Object} updated payload that has been stored
+   * @returns {Object} payload
    * @throws when operation could not be performed
    */
-  async edit(id, payload) {
+  async flush() {
     throw new Error('This needs to be overwritten in subclass!');
   }
 
@@ -56,19 +41,6 @@ class Api {
    * @throws when operation could not be performed
    */
   async add(payload) {
-    throw new Error('This needs to be overwritten in subclass!');
-  }
-
-  /**
-   * Delete the payload with the given id
-   *
-   * If id is invalid or no data is stored, `undefined` is returned
-   *
-   * @param {string} id the id to delete
-   * @returns {Object} the object that was deleted
-   * @throws when operation could not be performed
-   */
-  async delete(id) {
     throw new Error('This needs to be overwritten in subclass!');
   }
 }

@@ -1,15 +1,9 @@
-import {
-  GraphQLList,
-  GraphQLNonNull,
-  GraphQLObjectType,
-  GraphQLString,
-  GraphQLSchema,
-} from 'graphql';
+import { GraphQLList, GraphQLNonNull, GraphQLObjectType, GraphQLSchema } from 'graphql';
 
 import * as structures from '@pooky/structures';
 
 const {
-  graphql: { Cookies, CookiesInputType, SettingsInputType, SettingsType },
+  graphql: { Cookies, CookiesInputType },
 } = structures;
 
 const query = new GraphQLObjectType({
@@ -18,13 +12,8 @@ const query = new GraphQLObjectType({
   fields: () => ({
     cookies: {
       type: GraphQLList(GraphQLNonNull(Cookies)),
-      description: 'Retrieve a set of generated cookies',
+      description: 'Retrieve one set of cookies',
       resolve: root => root.getCookies(),
-    },
-    settings: {
-      type: GraphQLNonNull(SettingsType),
-      description: 'Retrieve settings',
-      resolve: root => root.getSettings(),
     },
   }),
 });
@@ -44,31 +33,10 @@ const mutation = new GraphQLObjectType({
       },
       resolve: (root, { data }) => root.addCookies(data),
     },
-    editCookies: {
+    flushCookies: {
       type: Cookies,
-      description: 'Edit an existing cookies object with new data',
-      args: {
-        id: {
-          type: GraphQLNonNull(GraphQLString),
-          description: 'id of cookies to edit',
-        },
-        data: {
-          type: GraphQLNonNull(CookiesInputType),
-          description: 'Cookies object data to store',
-        },
-      },
-      resolve: (root, { id, data }) => root.editCookies(id, data),
-    },
-    updateSettings: {
-      type: SettingsType,
-      description: 'Update the saved settings',
-      args: {
-        data: {
-          type: GraphQLNonNull(SettingsInputType),
-          description: 'Updated settings to save',
-        },
-      },
-      resolve: (root, { data }) => root.updateSettings(data),
+      description: 'Flushes all cookies from the store',
+      resolve: root => root.flushCookies(),
     },
   }),
 });
@@ -76,7 +44,7 @@ const mutation = new GraphQLObjectType({
 const schema = new GraphQLSchema({
   query,
   mutation,
-  types: [Cookies, SettingsType],
+  types: [Cookies],
 });
 
 export default schema;
