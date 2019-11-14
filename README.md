@@ -4,7 +4,7 @@ This is a base repository for a GraphQL API.
 
 The target audience for this repository is anyone looking to reverse pooky.
 
-Looking for help? Add me on Discord: orion#0001
+Looking for help? Add me on Discord: `orion#0001`
 
 ## Getting Started
 
@@ -30,6 +30,8 @@ in the GraphQL Schema.
 For this repository, I've created a package that handles all of the type
 definitions for you in a shared space. Browse around the [structures](https://github.com/walmat/pooky-api/tree/master/packages/structures) packages to see the definitions I've setup
 for the existing graphQL queries/mutations. 
+
+**Important: this has been reverted to adapt to Supreme's new tactic of changing cookie names. All type checking has been loosened and both queries and mutations now accept a dynamic JSON (stringified) data structure**
 
 For example, since all of the cookies are required strings (with the exception
 of `pooky_use_cookie`), our type definitions for the cookies object is as follows:
