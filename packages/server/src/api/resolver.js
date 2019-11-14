@@ -1,14 +1,12 @@
-import uuidv4 from 'uuid/v4';
-
-import { RedisStore } from '@pooky/datastore';
+import RedisStore from '@pooky/datastore';
 
 class Resolver {
   constructor() {
     this._settingsId = null;
     const connectArgs = [
       {
-        host: process.env.REDIS_HOST,
-        port: process.env.REDIS_PORT,
+        host: process.env.REDIS_HOST || '127.0.0.1',
+        port: process.env.REDIS_PORT || '6379',
       },
     ];
     this.store = new RedisStore(...connectArgs);
@@ -19,7 +17,7 @@ class Resolver {
   }
 
   async addCookies(payload) {
-    return this.store.cookies.add(payload);
+    return this.store.cookies.push(payload);
   }
 
   async flushCookies() {

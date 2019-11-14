@@ -8,7 +8,7 @@
     "start": "yarn run dev",
     "dev": "cross-env NODE_ENV=development yarn run dev:nodemon",
     "dev:nodemon": "nodemon --config nodemon.json",
-    "dev:node": "node --experimental-worker dist/server.js",
+    "dev:node": "node dist/server.js",
     "build": "babel --root-mode upward --no-comments -d dist src/",
     "heroku-postbuild": "yarn --production=false && yarn workspaces run build",
     "postinstall": "yarn run build",
@@ -22,9 +22,7 @@
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "express-graphql": "^0.8.0",
-    "graphql": "^14.2.1",
-    "react-grid-system": "^4.4.3",
-    "uuid": "^3.3.2"
+    "graphql": "^14.2.1"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",

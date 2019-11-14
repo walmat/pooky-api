@@ -12,10 +12,18 @@ const app = express();
 app.use(cors());
 
 // Attach the v1 graphql data route
-attachV1DataRoute(app, '/api/v1/data', rootResolver);
+attachV1DataRoute(app, '/api', rootResolver);
 
 const port = process.env.PORT || 5000;
-app.listen(port);
 
-// eslint-disable-next-line no-console
-console.log(`server listening on ${port}`);
+rootResolver.store._client
+  .ping()
+  .then(() => {
+    // Listen for a connection.
+    app.listen(port, () => {
+      console.log(`Server is listening on port ${port}`);
+    });
+  })
+  .catch(err => {
+    console.log(err);
+  });

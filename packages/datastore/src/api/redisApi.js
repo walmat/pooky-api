@@ -30,9 +30,10 @@ class RedisApi extends Api {
     }
   }
 
-  async add(payload) {
+  async push(payload) {
+    console.log(JSON.stringify(payload, null, 2), payload.values);
     try {
-      const reply = await this._client.set('cookies', JSON.stringify(payload));
+      const reply = await this._client.rpush('cookies', JSON.stringify(payload.values));
 
       if (!reply) {
         throw new Error("Wasn't set");

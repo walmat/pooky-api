@@ -1,11 +1,12 @@
 import Redis from 'ioredis';
 
 import RedisApi from '../api/redisApi';
+import Defns from '../defns';
 import Store from './store';
 
 class RedisStore extends Store {
   constructor(redisClientOptions = {}) {
-    super('REDIS');
+    super(Defns.REDIS);
     this._client = new Redis(redisClientOptions);
     this._cookiesApi = new RedisApi('cookies', this._client);
   }

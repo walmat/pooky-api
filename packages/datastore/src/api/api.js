@@ -40,7 +40,7 @@ class Api {
    * @returns {Object} payload that has been added with a new id
    * @throws when operation could not be performed
    */
-  async add(payload) {
+  async push(payload) {
     throw new Error('This needs to be overwritten in subclass!');
   }
 }
