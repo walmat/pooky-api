@@ -1,4 +1,4 @@
-import { GraphQLList, GraphQLNonNull, GraphQLObjectType, GraphQLSchema } from 'graphql';
+import { GraphQLString, GraphQLNonNull, GraphQLObjectType, GraphQLSchema } from 'graphql';
 
 import * as structures from '@pooky/structures';
 
@@ -11,7 +11,7 @@ const query = new GraphQLObjectType({
   description: 'Query API for Pooky API',
   fields: () => ({
     cookies: {
-      type: GraphQLList(GraphQLNonNull(Cookies)),
+      type: Cookies,
       description: 'Retrieve one set of cookies',
       resolve: root => root.getCookies(),
     },

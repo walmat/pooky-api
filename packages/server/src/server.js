@@ -12,7 +12,7 @@ const app = express();
 app.use(cors());
 
 // Attach the v1 graphql data route
-attachV1DataRoute(app, '/api', rootResolver);
+attachV1DataRoute(app, '/api/v1/pooky', rootResolver);
 
 const port = process.env.PORT || 5000;
 

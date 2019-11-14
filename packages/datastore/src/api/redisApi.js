@@ -12,9 +12,11 @@ class RedisApi extends Api {
    */
   async pop() {
     try {
-      const payload = await this._client.lpop('cookies');
-      console.log(payload);
-      return JSON.parse(payload);
+      const reply = await this._client.lpop(`data:${this._type}`);
+      if (!reply) {
+        throw new Error('No cookies!');
+      }
+      return JSON.parse(reply);
     } catch (err) {
       throw new Error(`Unable to pop: ${err.message}`);
     }
@@ -22,8 +24,7 @@ class RedisApi extends Api {
 
   async flush() {
     try {
-      const payload = await this._client.flushdb();
-      console.log(payload);
+      const payload = await this._client.flushdb(`data:${this._type}`);
       return JSON.parse(payload);
     } catch (err) {
       throw new Error(`Unable to pop: ${err.message}`);
@@ -31,10 +32,8 @@ class RedisApi extends Api {
   }
 
   async push(payload) {
-    console.log(JSON.stringify(payload, null, 2), payload.values);
     try {
-      const reply = await this._client.rpush('cookies', JSON.stringify(payload.values));
-
+      const reply = await this._client.rpush(`data:${this._type}`, JSON.stringify(payload));
       if (!reply) {
         throw new Error("Wasn't set");
       }
