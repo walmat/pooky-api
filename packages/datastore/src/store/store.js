@@ -21,13 +21,6 @@ class Store {
   get cookies() {
     throw new Error('This needs to be overwritten in subclass!');
   }
-
-  /**
-   * Api instance to manage settings
-   */
-  get settings() {
-    throw new Error('This needs to be overwritten in subclass!');
-  }
 }
 
 export default Store;
