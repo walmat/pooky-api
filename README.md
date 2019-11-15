@@ -229,13 +229,13 @@ Now, hit the `play` icon to perform the query on the datastore that holds cookie
 
 ![query-done](https://github.com/walmat/pooky-api/blob/master/public/query-done.PNG)
 
-Simple, right? I've left some programatic examples [here](https://github.com/walmat/pooky-api/tree/master/packages/datastore/examples).
+Simple, right?
 
 ### Additional Content /  Resources
 
-1. https://github.com/schickling/timemachine
-2. https://github.com/paulirish/break-on-access
-3. https://github.com/krpar/pooky-browser (shoutout to [@krpar](https://github.com/krpar) for this)
+1. https://github.com/schickling/timemachine - Allows you to modify the date object that a browser environment runs on
+2. https://github.com/paulirish/break-on-access - Allows you to set breakpoints when certain actions happen
+3. https://github.com/krpar/pooky-browser (huge shoutout to [@krpar](https://github.com/krpar) for this) - Allows you to activate and step through pooky in a Puppeteer environment.
 
 This README scratches the surface on what GraphQL is capable of, to find out
 more about what it's used for, please refer to it's [documentation](https://graphql.org).
