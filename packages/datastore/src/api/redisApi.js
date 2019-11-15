@@ -24,10 +24,14 @@ class RedisApi extends Api {
 
   async flush() {
     try {
-      const payload = await this._client.flushdb(`data:${this._type}`);
-      return JSON.parse(payload);
+      const reply = await this._client.flushdb();
+
+      if (!reply) {
+        throw new Error('Technical error!');
+      }
+      return;
     } catch (err) {
-      throw new Error(`Unable to pop: ${err.message}`);
+      throw new Error(`Unable to flush: ${err.message}`);
     }
   }
 

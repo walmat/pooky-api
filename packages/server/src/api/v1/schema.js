@@ -15,6 +15,11 @@ const query = new GraphQLObjectType({
       description: 'Retrieve one set of cookies',
       resolve: root => root.getCookies(),
     },
+    flush: {
+      type: Cookies,
+      description: 'Flushes all cookies from the store',
+      resolve: root => root.flushCookies(),
+    },
   }),
 });
 
@@ -32,11 +37,6 @@ const mutation = new GraphQLObjectType({
         },
       },
       resolve: (root, { data }) => root.addCookies(data),
-    },
-    flushCookies: {
-      type: Cookies,
-      description: 'Flushes all cookies from the store',
-      resolve: root => root.flushCookies(),
     },
   }),
 });
