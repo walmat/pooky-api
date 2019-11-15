@@ -5,9 +5,14 @@ import Defns from '../defns';
 import Store from './store';
 
 class RedisStore extends Store {
-  constructor(redisClientOptions = {}) {
+  constructor(redisClientOptions = null) {
     super(Defns.REDIS);
-    this._client = new Redis(redisClientOptions);
+
+    if (redisClientOptions) {
+      this._client = new Redis(redisClientOptions);
+    } else {
+      this._client = new Redis();
+    }
     this._cookiesApi = new RedisApi('cookies', this._client);
   }
 
