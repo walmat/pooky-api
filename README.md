@@ -8,7 +8,7 @@ Looking for help? Add me on Discord: `orion#0001`
 
 ## Demonstration
 
-![graphiql-demonstration](https://vimeo.com/373469096)
+[![GraphiQL Demonstration](https://img.youtube.com/vi/VID/0.jpg)](https://vimeo.com/373469096)
 
 ![pooky-client-fetch-example](https://vimeo.com/373468734)
 
