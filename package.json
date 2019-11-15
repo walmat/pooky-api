@@ -7,6 +7,9 @@
     "build": "yarn workspaces run build",
     "dev": "yarn workspace @pooky/server start",
     "lint": "yarn workspaces run lint",
+    "clean": "concurrently \"yarn clean:node_modules\" \"yarn clean:dist\"",
+    "clean:node_modules": "cross-env rm -rf node_modules && rm -rf packages/**/node_modules",
+    "clean:dist": "cross-env rm -rf packages/**/dist",
     "lint:fix": "yarn workspaces run lint:fix",
     "test": "jest",
     "coverage": "jest --coverage"
@@ -30,6 +33,8 @@
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
+    "concurrently": "5.0.0",
+    "cross-env": "6.0.3",
     "eslint": "5.12.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",
