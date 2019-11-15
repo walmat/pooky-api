@@ -17,7 +17,8 @@
   "workspaces": [
     "packages/*"
   ],
-  "devDependencies": {
+  "dependencies": {
+    "@babel/runtime": "^7.4.3",
     "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.0",
     "@babel/node": "^7.2.0",
@@ -45,8 +46,5 @@
     "jest": "^23.6.0",
     "prettier": "^1.16.4",
     "yarn": "^1.12.3"
-  },
-  "dependencies": {
-    "@babel/runtime": "^7.4.3"
   }
 }
