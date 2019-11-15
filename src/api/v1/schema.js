@@ -1,6 +1,6 @@
 import { GraphQLBoolean, GraphQLNonNull, GraphQLObjectType, GraphQLSchema } from 'graphql';
 
-import * as structures from '@pooky/structures';
+import * as structures from '../../structures';
 
 const {
   graphql: { Cookies, CookiesInputType },

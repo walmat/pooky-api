@@ -1,4 +1,4 @@
-import RedisStore from '@pooky/datastore';
+import RedisStore from '../datastore';
 
 class Resolver {
   constructor() {
