@@ -3,13 +3,7 @@ import RedisStore from '@pooky/datastore';
 class Resolver {
   constructor() {
     this._settingsId = null;
-    const connectArgs = [
-      {
-        host: process.env.REDIS_HOST || '127.0.0.1',
-        port: process.env.REDIS_PORT || '6379',
-      },
-    ];
-    this.store = new RedisStore(...connectArgs);
+    this.store = new RedisStore(process.env.REDIS_URL);
   }
 
   async getCookies() {
