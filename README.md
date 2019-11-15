@@ -233,7 +233,7 @@ Simple, right?
 
 ### Additional Content /  Resources
 
-1. https://github.com/schickling/timemachine - Allows you to modify the date object that a browser environment runs on
+1. https://github.com/schickling/timemachine - Allows you to modify the date object that a browser environment uses
 2. https://github.com/paulirish/break-on-access - Allows you to set breakpoints when certain actions happen
 3. https://github.com/krpar/pooky-browser (huge shoutout to [@krpar](https://github.com/krpar) for this) - Allows you to activate and step through pooky in a Puppeteer environment.
 
