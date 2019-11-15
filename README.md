@@ -6,6 +6,13 @@ The target audience for this repository is anyone looking to reverse pooky.
 
 Looking for help? Add me on Discord: `orion#0001`
 
+## Demonstration
+
+![graphiql-demonstration](https://vimeo.com/373469096)
+
+![pooky-client-fetch-example](https://vimeo.com/373468734)
+
+
 ## Getting Started
 
 GraphQL consists of a type system, query language and execution semantics,
