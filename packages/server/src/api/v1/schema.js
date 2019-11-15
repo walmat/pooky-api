@@ -1,4 +1,4 @@
-import { GraphQLString, GraphQLNonNull, GraphQLObjectType, GraphQLSchema } from 'graphql';
+import { GraphQLBoolean, GraphQLNonNull, GraphQLObjectType, GraphQLSchema } from 'graphql';
 
 import * as structures from '@pooky/structures';
 
@@ -16,7 +16,7 @@ const query = new GraphQLObjectType({
       resolve: root => root.getCookies(),
     },
     flush: {
-      type: Cookies,
+      type: GraphQLNonNull(GraphQLBoolean),
       description: 'Flushes all cookies from the store',
       resolve: root => root.flushCookies(),
     },
