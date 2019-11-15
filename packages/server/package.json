@@ -17,12 +17,7 @@
   },
   "dependencies": {
     "@pooky/datastore": "*",
-    "@pooky/structures": "*",
-    "cors": "^2.8.5",
-    "dotenv": "^7.0.0",
-    "express": "^4.16.4",
-    "express-graphql": "^0.8.0",
-    "graphql": "^14.2.1"
+    "@pooky/structures": "*"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
