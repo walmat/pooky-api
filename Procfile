@@ -1,1 +1,1 @@
-web: yarn workspace @pooky/server run start
+web: yarn start
